@@ -175,12 +175,15 @@ if planar
     tout1  = v1(7:9,end);
     P = zeros(3,3);
     P(:,2:3) = reshape(v1(1:6,end),2,3)';
-    scalefact = sqrt(abs(norm(P(:,2))*norm(P(:,3))));
+    %scalefact = sqrt(abs(norm(P(:,2))*norm(P(:,3)))); % original algorithm
     P(:,1) = cross(P(:,2),P(:,3));
     P = P';
      %SVD to find the best rotation matrix in the Frobenius sense
-    [U2,~,V2] = svd(P(1:3,1:3));
+    [U2, d2, V2] = svd(P(1:3,1:3));
     R = U2*V2'; 
+    
+    % modification- Kuldeep
+    scalefact = d2;
     
     if det(R) < 0
         R = -1*R;
