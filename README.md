@@ -1,7 +1,7 @@
 # Modified MLPnP
 MLPnP solver modified for accurate scale recovery at large ranges
 
-This is a modified implementation of the original (Maximum Likelihood Perspective-n-Points)[https://github.com/urbste/MLPnP_matlab] solver. For details on the orginal algorithm, please refer to [MLPnP - A Real-Time Maximum Likelihood Solution to the Perspective-n-Point Problem](https://arxiv.org/abs/1607.08112)
+This is a modified implementation of the original [Maximum Likelihood Perspective-n-Points](https://github.com/urbste/MLPnP_matlab) solver. For details on the orginal algorithm, please refer to [MLPnP - A Real-Time Maximum Likelihood Solution to the Perspective-n-Point Problem](https://arxiv.org/abs/1607.08112)
 
 ##Modification:
 Scale recovery for linear system solution is done with the intermediate singular value rather than a coarse three column norm that breaks down at larger relative ranges.
